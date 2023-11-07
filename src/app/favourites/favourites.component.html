@@ -1,0 +1,18 @@
+<div class="row mt-5 mb-5">
+    <div class="col-md-2 pull-left">
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+    </div>
+</div>
+<div *ngIf="favoriteCountries;" class="row">
+    <div *ngFor="let favourite of favoriteCountries" class="card col-md-4 m-1" style="width: 18rem; position: relative;">
+        <img [routerLink]="['/favourites', favourite.cca3]" data-bs-toggle="modal" data-bs-target="#countryModal" [src]="favourite.flags.png" class="card-img-top wrapper" alt="country-flag">
+        <div class="card-body">
+            <h5 class="card-title">{{favourite.name.common}}</h5>
+            <p *ngIf="favourite.population"><span class="label">Population: </span>{{favourite.population|number}}</p>
+            <p *ngIf="favourite.region"><span class="label">Region: </span>{{favourite.region}}</p>
+            <p *ngIf="favourite.capital"><span class="label">Capital: </span>{{favourite.capital}}</p>
+            <button (click)="removeFromFavorites(favourite)" class="btn btn-danger">Remove from Favorites</button>
+        </div>
+    </div>
+</div>
+<br>

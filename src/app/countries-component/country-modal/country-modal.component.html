@@ -1,0 +1,65 @@
+<!-- <div class="modal-header">
+    <h2 class="modal-title pull-left">{{ country.name.common }}</h2>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Region:</strong> {{ country.region }}</p>
+    <p><strong>Fifa Code:</strong> {{ country.fifa }}</p>
+    <p><strong>Population:</strong> {{ country.population }}</p>
+    <p><strong>Languages: </strong>{{ languageString }}</p>
+    <p><strong>Local Time and Timezone:</strong> {{ country.timezones }}</p>
+    <p><strong>Capital City:</strong> {{ country.capital }}</p>
+    <p ><strong>Currencies: </strong>{{ currencyKeys }}</p>
+    <p><strong>View on Map: </strong> <a href="{{ country.maps.googleMaps }}" target="_blank">Open Map</a></p>
+  </div>
+
+  <button class="btn" (click)="toggleFavorite()" [ngClass]="{'add-button': !isFavorite, 'remove-button': isFavorite}">
+    {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+  </button> -->
+
+  <div class="modal-header">
+    <h2 class="modal-title">{{ country.name.common }}</h2>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label class="form-label"><strong>Region:</strong></label>
+      <p class="form-control-plaintext">{{ country.region }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>Fifa Code:</strong></label>
+      <p class="form-control-plaintext">{{ country.fifa }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>Population:</strong></label>
+      <p class="form-control-plaintext">{{ country.population }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>Languages:</strong></label>
+      <p class="form-control-plaintext">{{ languageString }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>Local Time and Timezone:</strong></label>
+      <p class="form-control-plaintext">{{ country.timezones }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>Capital City:</strong></label>
+      <p class="form-control-plaintext">{{ country.capital }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>Currencies:</strong></label>
+      <p class="form-control-plaintext">{{ currencyKeys }}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><strong>View on Map:</strong></label>
+      <p class="form-control-plaintext">
+        <a href="{{ country.maps.googleMaps }}" target="_blank">Open Map</a>
+      </p>
+    </div>
+  
+    <button class="btn" (click)="toggleFavorite()" [ngClass]="{'add-button': !isFavorite, 'remove-button': isFavorite}">
+      {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+    </button>
+  </div>

@@ -1,0 +1,16 @@
+<!-- {{countries$ | async | json}} -->
+
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <app-search (searchResults)="onSearchResultsReceived($event)"></app-search>
+        </div>
+        <div class="col-md-5"></div>
+        <div class="col-md-3 ml-auto">
+            <app-filter [countries]="countries$" (regionSelected)="onRegionSelected($event)"></app-filter>
+        </div>
+    </div>
+    <div class="row">
+        <app-country-card class="col-md-3" *ngFor="let country of countries$|async" [country]="country"></app-country-card>
+    </div>
+</div>

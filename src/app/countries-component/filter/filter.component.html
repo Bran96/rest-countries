@@ -1,0 +1,5 @@
+<select class="form-select" (change)="onRegionChange($event)">
+    <option value="">Select a Region</option>
+    <option value="All">All</option>
+    <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+</select>

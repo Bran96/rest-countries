@@ -1,0 +1,16 @@
+<a>
+    <div class="card" style="width: 18rem; position: relative;">
+        <img [src]="country.flags.png" class="card-img-top wrapper" alt="country-flag" (click)="openModal()">
+        <div class="card-body">
+            <h5 class="card-title">{{country.name.common}}</h5>
+            <p *ngIf="country.population"><span class="label">Population: </span>{{country.population|number}}</p>
+            <p *ngIf="country.region"><span class="label">Region: </span>{{country.region}}</p>
+            <p *ngIf="country.capital"><span class="label">Capital: </span>{{country.capital}}</p>
+            <button class="btn" (click)="toggleFavorite()" [ngClass]="{'add-button': !isFavorite, 'remove-button': isFavorite}">
+                {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+            </button>
+        </div>
+    </div>
+<a>
+<br>
+
